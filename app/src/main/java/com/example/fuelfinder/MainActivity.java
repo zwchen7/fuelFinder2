@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         enterButton = findViewById(R.id.enterButton);
 
         enterButton.setOnClickListener(new View.OnClickListener() {

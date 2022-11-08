@@ -4,6 +4,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.Manifest;
 import android.widget.Toast;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +17,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.CameraUpdateFactory;
 
 public class MapActivity extends AppCompatActivity implements OnMapReadyCallback{
     private static final String TAG = "MapActivity";
@@ -23,14 +25,17 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private static final String COARSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
     private boolean permsGranted = false;
     private static final int REQUEST_LOC_PERMISSION_CODE = 1234;
-    private GoogleMap gMap;
+    private GoogleMap mMap;
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        Toast.makeText(this, "Map ready", Toast.LENGTH_SHORT).show();
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(0,0)).title("marker"));
-        gMap = googleMap;
-
+        mMap = googleMap;
+        LatLng zero = new LatLng(0, 0);
+        LatLng gatech = new LatLng(33.77, -84.39);
+        mMap.addMarker(new MarkerOptions().position(zero).title("marker"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(zero));
+        mMap.addMarker(new MarkerOptions().position(gatech).title("Georgia Institute of Technology"));
     }
 
     @Override
@@ -38,6 +43,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
         getLocationPermission();
+        if (permsGranted) {
+            initMap();
+        }
     }
 
     private void initMap() {
@@ -71,7 +79,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         }
                     }
                     permsGranted = true;
-                    initMap();
                 }
             }
         }
