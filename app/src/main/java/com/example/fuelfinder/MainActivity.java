@@ -20,9 +20,19 @@ import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
+    private String TAG = "MainActivity";
     Button enterButton;
+    private List<GasStation> stations = new ArrayList();
     private static final int ERROR_DIALOG_REQUEST = 9001;
 
     @Override
@@ -48,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        readGasData();
     }
 
 //    private void init() {
@@ -70,6 +82,39 @@ public class MainActivity extends AppCompatActivity {
         }
         return false;
         //return to API setup part 2
+    }
+
+    private void readGasData() {
+        InputStream is = getResources().openRawResource(R.raw.gas_stations);
+        BufferedReader reader = new BufferedReader(
+                new InputStreamReader(is, Charset.forName("UTF-8"))
+        );
+
+        String line = "";
+        try {
+            reader.readLine(); //skip headers
+            while ((line = reader.readLine()) != null) {
+                //split by ','
+                String[] tokens = line.split(",");
+                Log.d(TAG, "gasdata: " + line);
+                //read data
+                GasStation gs = new GasStation();
+                gs.setX(Double.parseDouble(tokens[0]));
+                gs.setY(Double.parseDouble(tokens[1]));
+                gs.setId(Integer.parseInt(tokens[2]));
+                gs.setCounty(tokens[3]);
+                gs.setName(tokens[4]);
+                gs.setAddress(tokens[5]);
+                gs.setCity(tokens[6]);
+                gs.setZip(tokens[7]);
+                gs.setPhone(tokens[8]);
+                gs.setLat(Double.parseDouble(tokens[9]));
+                gs.setLng(Double.parseDouble(tokens[10]));
+                stations.add(gs);
+            }
+        } catch (IOException e) {
+            Log.d(TAG, "readGasData: error reading file");
+        }
     }
 
 
