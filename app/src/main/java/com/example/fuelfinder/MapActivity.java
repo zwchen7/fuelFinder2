@@ -49,11 +49,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private static final int REQUEST_LOC_PERMISSION_CODE = 1234;
     private GoogleMap mMap;
     private FusedLocationProviderClient mFusedLocationProviderClient;
-    private LocationListener mlocationListener;
-    private LocationManager mlocationManager;
-    //private GoogleApiClient mGoogleApiClient;
     private List<GasStation> stations = new ArrayList<>();
-    private List<GasStation> tenClosest = new ArrayList<>();
     private LatLng center;
 
 
