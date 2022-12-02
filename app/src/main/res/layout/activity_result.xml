@@ -1,17 +1,333 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".result">
-
-
-    <ListView
-        android:id="@+id/listview"
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="172dp" />
+        android:layout_height="match_parent">
 
-</LinearLayout>
+    <!--    <ListView-->
+    <!--        android:id="@+id/listview"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        tools:layout_editor_absoluteX="46dp"-->
+    <!--        tools:layout_editor_absoluteY="172dp" />-->
+
+        <TextView
+            android:id="@+id/txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nearby Fuel Stations:"
+            android:textSize = "20dp"
+            android:textStyle="bold">
+
+        </TextView>
+
+
+        <TableRow android:background="#51B435" android:padding="10dp">
+            <TextView
+                android:id="@+id/Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Name"
+                android:gravity="center"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/Distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Distance(mi)"
+                android:gravity="center"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Address"
+                android:gravity="center"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Phone"
+                android:gravity="center"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="City"
+                android:gravity="center"
+                android:textStyle="bold"/>
+        </TableRow>
+        <TableRow android:background="#F0F7F7" android:padding="5dp">
+            <TextView
+                android:id="@+id/Name1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+            <TextView
+                android:id="@+id/Distance1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/Address1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+            <TextView
+                android:id="@+id/Phone1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+            <TextView
+                android:id="@+id/City1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+        </TableRow>
+        <TableRow android:background="#F0F7F7" android:padding="5dp">
+            <TextView
+                android:id="@+id/Name2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+            <TextView
+                android:id="@+id/Distance2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/Address2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+            <TextView
+                android:id="@+id/Phone2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+            <TextView
+                android:id="@+id/City2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+
+        </TableRow>
+        <TableRow android:background="#F0F7F7" android:padding="5dp">
+            <TextView
+                android:id="@+id/Name3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+            <TextView
+                android:id="@+id/Distance3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/Address3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+            <TextView
+                android:id="@+id/Phone3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+            <TextView
+                android:id="@+id/City3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+
+        </TableRow>
+
+        <TableRow android:background="#F0F7F7" android:padding="5dp">
+            <TextView
+                android:id="@+id/Name4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+            <TextView
+                android:id="@+id/Distance4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/Address4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+            <TextView
+                android:id="@+id/Phone4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+            <TextView
+                android:id="@+id/City4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+
+        </TableRow>
+
+        <TableRow android:background="#F0F7F7" android:padding="5dp">
+            <TextView
+                android:id="@+id/Name5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+            <TextView
+                android:id="@+id/Distance5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/Address5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+            <TextView
+                android:id="@+id/Phone5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+            <TextView
+                android:id="@+id/City5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+        </TableRow>
+        <TableRow android:background="#F0F7F7" android:padding="5dp">
+            <TextView
+                android:id="@+id/Name6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/Distance6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/Address6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/Phone6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/City6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+        </TableRow>
+        <TableRow android:background="#F0F7F7" android:padding="5dp">
+            <TextView
+                android:id="@+id/Name7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/Distance7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/Address7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/Phone7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/City7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+        </TableRow>
+        <TableRow android:background="#F0F7F7" android:padding="5dp">
+            <TextView
+                android:id="@+id/Name8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/Distance8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/Address8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/Phone8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/City8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+        </TableRow>
+    </TableLayout>
+</HorizontalScrollView>
+
+

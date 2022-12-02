@@ -17,6 +17,32 @@ public class GasStation {
     private int hv_diesel;
     private int def;
     private int kerosene;
+    private double distance;
+
+
+    @Override
+    public String toString() {
+        return "GasStation{" +
+                "x=" + x +
+                ", y=" + y +
+                ", id=" + id +
+                ", county='" + county + '\'' +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", zip='" + zip + '\'' +
+                ", phone='" + phone + '\'' +
+                ", lat=" + lat +
+                ", lng=" + lng +
+                ", gasoline=" + gasoline +
+                ", diesel=" + diesel +
+                ", hv_diesel=" + hv_diesel +
+                ", def=" + def +
+                ", kerosene=" + kerosene +
+                ", nonHwy=" + nonHwy +
+                '}';
+    }
+
     private int nonHwy;
 
     public String getCity() {
@@ -153,5 +179,13 @@ public class GasStation {
 
     public void setLng(double lng) {
         this.lng = lng;
+    }
+
+    public double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
     }
 }
