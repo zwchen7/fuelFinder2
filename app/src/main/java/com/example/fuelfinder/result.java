@@ -60,7 +60,7 @@ public class result extends AppCompatActivity {
 
 
     private void formatTable(List<GasStation> list) {
-        for (int i = 1; i <=8; i++) {
+        for (int i = 1; i <=10; i++) {
             //format ID strings
             String name = "Name"+i;
             String distance = "Distance"+i;
